@@ -1,0 +1,49 @@
+@tailwind components;
+
+@layer components {
+  #sidebar {
+    @apply w-64;
+    @apply border-r border-dim-black bg-sheet;
+    @apply px-10 pb-28 pt-6;
+  }
+
+  @media only screen and (max-width: theme("screens.desktop")) {
+    #sidebar {
+      @apply fixed -left-full top-0 h-screen bg-red-300;
+      @apply w-[75%] max-w-[24rem];
+      @apply border-none bg-grey-low;
+
+      @apply px-7 pb-16 pt-10;
+
+      @apply z-[3002];
+    }
+    #sidebar[data-app-open="true"] {
+      @apply left-0;
+    }
+
+    #sidebar {
+      height: var(--app-root-winh);
+    }
+  }
+
+  /* ================================ */
+
+  .sidelinks {
+    @apply relative flex flex-col gap-4;
+    /* @apply flex flex-col gap-10; */
+  }
+
+  .sidelinks a {
+    @apply flex items-center gap-x-4 whitespace-nowrap;
+    @apply font-medium transition-colors duration-75;
+    @apply text-grey-subtle hover:bg-blue-high/10;
+    @apply -mx-4 rounded-half px-4 py-3;
+  }
+  .sidelinks a.active {
+    @apply text-[#5CE5E2];
+  }
+
+  .sidelinks a:not(.active):hover {
+    @apply text-[#5CE5E2];
+  }
+}

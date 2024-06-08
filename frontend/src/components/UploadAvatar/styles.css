@@ -1,0 +1,12 @@
+@tailwind components;
+
+@layer components {
+  .app-upload-avatar {
+    @apply relative h-24 w-24 cursor-pointer rounded-full bg-grey-classic transition-colors hover:bg-grey-grain;
+  }
+
+  .app-upload-avatar > div {
+    @apply absolute -bottom-1 -right-2 box-content h-7 w-7 rounded-full border-4  border-grey-low bg-[#E3ECEC];
+    @apply flex items-center justify-center;
+  }
+}

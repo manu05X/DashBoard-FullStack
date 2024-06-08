@@ -1,0 +1,38 @@
+.hours {
+    /* border-right: 1px solid rgba(0, 0, 0, 0.3); */
+    margin-right: 4px;
+}
+
+.mins {
+    margin-left: 4px;
+}
+
+.time-cell {
+    text-align: center;
+    padding: 4px;
+}
+
+.time-cell:hover {
+    box-shadow: 0 0 5px 0;
+}
+
+.time-cells::-webkit-scrollbar {
+    width: 0;
+}
+
+.divider {
+    width: 1px;
+    height: 100%;
+    box-shadow: 0 0 2px 0;
+}
+
+.disable-time-cell {
+    opacity: 0.3;
+}
+
+/* .time-cells::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+.time-cells::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+} */

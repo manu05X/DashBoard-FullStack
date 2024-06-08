@@ -1,0 +1,75 @@
+/* width: 3.1875rem; */
+/* height: 1.9375rem;  */
+
+.app-switch {
+  position: relative;
+  /* width: 88px; */
+  width: 3.1875rem;
+  user-select: none;
+}
+.app-switch-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.app-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 50px;
+}
+.app-switch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.app-switch-inner:before,
+.app-switch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  /* height: 50px; */
+  height: 1.9375rem;
+  padding: 0;
+  line-height: 50px;
+  font-size: 14px;
+  /* color: white; */
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.app-switch-inner:before {
+  content: "";
+  padding-left: 10px;
+  background-color: #34c759;
+}
+.app-switch-inner:after {
+  content: "";
+  padding-right: 10px;
+  background-color: #242327;
+  text-align: right;
+}
+.app-switch-switch {
+  display: block;
+
+  background: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(100% - 1.9375rem - 0.125rem + 2px);
+  border-radius: 50px;
+  /* transition: all 0.25s ease-in 0s; */
+  transition: all 0.25s linear 0s;
+  margin: 0.125rem;
+
+  /* h = 1.9375rem */
+  width: calc(1.9375rem - 0.125rem - 2px);
+}
+.app-switch-checkbox:checked + .app-switch-label .app-switch-inner {
+  margin-left: 0;
+}
+.app-switch-checkbox:checked + .app-switch-label .app-switch-switch {
+  right: 0px;
+  /* background-color: #27a1ca; */
+}

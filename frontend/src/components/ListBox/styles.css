@@ -1,0 +1,47 @@
+@tailwind components;
+
+@layer components {
+  /* .ev-form-control { */
+  .app-listbox {
+    @apply relative block flex-1;
+  }
+
+  .app-listbox > label {
+    @apply mb-3 block text-lg font-medium;
+  }
+
+  .app-listbox .app-listbox-btn {
+    @apply relative;
+    @apply w-full rounded-half px-2 py-2;
+    @apply border border-grey-high;
+    @apply transition-colors;
+    @apply bg-dim-black text-grey-classic hover:bg-sheet/30;
+    @apply flex items-center justify-between;
+  }
+
+  .app-listbox .app-listbox-btn[data-app-active="true"] {
+    @apply text-white;
+  }
+
+  .app-listbox .app-listbox-options {
+    @apply absolute top-full z-[90] w-full translate-y-2 overflow-hidden rounded-half;
+    @apply bg-grey-high;
+  }
+
+  .app-listbox .app-listbox-options > li {
+    @apply cursor-pointer px-3 py-2 transition-colors hover:bg-blue-high/80 hover:text-dim-black;
+  }
+
+  /* ---- MINIMAL ---- */
+
+  .app-listbox.minimal {
+    @apply flex-initial;
+  }
+  .app-listbox.minimal .app-listbox-btn {
+    @apply mr-4 rounded-card border border-grey-high bg-sheet px-3;
+  }
+
+  .app-listbox.tranparent .app-listbox-btn {
+    @apply bg-transparent py-2.5;
+  }
+}

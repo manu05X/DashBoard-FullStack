@@ -1,0 +1,48 @@
+@tailwind components;
+
+@layer components {
+  .pm-stat {
+    @apply relative pl-4;
+  }
+  .pm-stat::before {
+    @apply absolute left-0 top-0 block h-full w-0.5 rounded-2xl bg-blue-high content-['_'];
+  }
+  .pm-stat > h3 {
+    @apply font-semibold text-white;
+  }
+  .pm-stat > p {
+    @apply text-sm text-grey-subtle;
+  }
+
+  /* ---------------- */
+
+  .pm-table-section {
+    @apply w-full max-w-full overflow-x-auto;
+  }
+
+  .pm-table-section > table {
+    @apply w-full;
+  }
+
+  .pm-table-section > table th {
+    @apply bg-grey-low;
+    @apply text-left text-sm font-normal;
+    @apply first:rounded-l-half last:rounded-r-half;
+    @apply py-3;
+  }
+
+  .pm-table-section > table th,
+  .pm-table-section > table td {
+    @apply px-7 first:pl-7 last:pr-7;
+    @apply whitespace-nowrap text-dim-white;
+  }
+
+  .pm-table-section > table td {
+    @apply py-3 align-middle;
+  }
+  .pm-table-section > table tr:first-child > td {
+    @apply pt-5;
+  }
+
+  
+}

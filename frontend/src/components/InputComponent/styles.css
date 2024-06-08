@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .app-textbox.settings {
+    @apply flex-initial;
+  }
+
+  .empty-field-error {
+    color: red;
+    margin-top: 4px;
+  }
+
+  .app-textbox.settings .app-textbox-area {
+    @apply bg-[#1F1F21] focus-within:bg-grey-classic/20;
+  }
+}

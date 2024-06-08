@@ -1,0 +1,56 @@
+@tailwind components;
+
+@layer components {
+
+  .sm-cal-day-grid {
+    @apply grid;
+    @apply grid-cols-[repeat(7,1fr)] grid-rows-[auto_repeat(1,1fr)];
+    @apply gap-[0.3rem];
+    /* justify-items: center; */
+  }
+
+  .sm-cal-day-grid .sm-cal-day-name {
+    @apply mb-4 text-center p-2;
+  }
+
+  .sm-cal-day-grid .sm-sm-cal-day-cell {
+    @apply bg-grey-high;
+    @apply flex items-center justify-center;
+    @apply rounded-card;
+    @apply text-lg font-medium text-white;
+    @apply min-h-[theme('spacing.12')] min-w-[theme('spacing.12')];
+    @apply w-full aspect-square p-2;
+  }
+
+  .sm-cal-day-grid .sm-cal-day-cell.disabled {
+    @apply text-grey-subtle;
+  }
+
+  .sm-cal-day-grid .sm-cal-day-cell.active {
+    @apply bg-blue-high text-sheet rounded-md;
+  }
+  .sm-cal-day-grid .sm-cal-day-cell:not(.disabled):not(.active) {
+    @apply hover:bg-blue-high/10 rounded-md;
+  }
+
+  /* ======================================== */
+  /* ======================================== */
+  /* ======================================== */
+  /* ======================================== */
+  /* ======================================== */
+
+  div#lib-calender .react-calendar {
+    @apply rounded-card border-none;
+    @apply w-auto;
+    @apply bg-grey-low;
+  }
+
+  div#lib-calender .react-calendar .tile {
+    @apply bg-grey-high;
+    @apply flex items-center justify-center;
+    @apply h-12 w-12 rounded-card;
+    @apply text-lg font-medium text-white;
+
+    @apply hover:bg-blue-high/10;
+  }
+}

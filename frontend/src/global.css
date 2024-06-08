@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Public Sans", sans-serif;
+}
+
+#root {
+  isolation: isolate;
+
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none !important;
+}
+
+@layer components {
+  /* =============== TABS =============== */
+  .app-tab {
+    @apply relative overflow-hidden;
+    @apply rounded-half !bg-grey-low px-2 py-3 hover:!bg-blue-high/10 mini-desktop:px-16;
+    @apply font-medium text-grey-subtle;
+  }
+  .app-tab.slim {
+    @apply !px-2;
+  }
+
+  .app-tab[data-headlessui-state~="selected"],
+  .app-tab.active {
+    @apply text-blue-high;
+  }
+  .app-tab[data-headlessui-state~="selected"]::after,
+  .app-tab.active::after {
+    content: " ";
+    @apply absolute bottom-0 left-0 block h-1 w-full bg-blue-high;
+  }
+
+  /* =============== TEXTBOX =============== */
+  .app-textbox {
+    @apply block flex-1;
+    /* @apply min-w-full sm:min-w-[24rem]; */
+  }
+
+  .app-textbox > label {
+    @apply mb-3 block text-lg font-medium;
+  }
+
+  .app-textbox .app-textbox-area {
+    @apply relative;
+    @apply w-full overflow-hidden rounded-half;
+    @apply border border-grey-high;
+    @apply transition-colors;
+    @apply bg-dim-black focus-within:bg-sheet/30;
+    @apply flex items-center;
+  }
+
+  .app-textbox .app-textbox-area > input,
+  .app-textbox .app-textbox-area > textarea {
+    @apply h-10 flex-1 bg-transparent text-white placeholder:text-grey-classic;
+    @apply px-2;
+  }
+  .app-textbox .app-textbox-area > textarea {
+    @apply min-h-[7.6rem] py-2;
+  }
+
+  /* =============== CHECKBOX =============== */
+
+  .app-checkbox {
+    @apply flex items-center gap-x-2.5;
+    @apply cursor-pointer;
+    @apply select-none;
+  }
+
+  .app-checkbox > input[type="checkbox"] {
+    @apply m-0 appearance-none;
+
+    @apply h-7 w-7 flex-shrink-0;
+    @apply rounded-card border-2 border-grey-high;
+
+    @apply grid place-content-center;
+  }
+
+  .app-checkbox > input[type="checkbox"]:checked {
+    @apply border-[#5CE5E2];
+  }
+
+  .app-checkbox > input[type="checkbox"]::before {
+    content: "";
+
+    width: 0.65em;
+    height: 0.65em;
+    opacity: 0;
+    transition: 120ms opacity ease-in-out;
+    box-shadow: inset 1em 1em #5ce5e2;
+
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  .app-checkbox > input[type="checkbox"]:checked::before {
+    opacity: 1;
+  }
+}
