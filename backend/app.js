@@ -1489,13 +1489,13 @@ app.get("/forgot-password", async (req, res) => {
       port: 465,
       secure: true,
       auth: {
-        type: "",
-        user: "",
-        clientId: "",
-        clientSecret: "",
-        refreshToken: "",
-        accessToken: "",
-        expires: ,
+        type: "OAuth2",
+        user: "alimangostudios@gmail.com",
+        clientId: "860363559753-81v9dv2pnk1she3tt8cd6766e6i7t3gl.apps.googleusercontent.com",
+        clientSecret: "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",
+        refreshToken: "1//04zYDt6CXDlN0CgYIARAAGAQSNwF-L9IrBvykWUdiqP7qy2-zOHoUPSOvazN9csEWNWxVtT61a950aewz4X_qufSz97utRweIi0Q",
+        accessToken: "ya29.a0AbVbY6MhWvUAMTO2FmhlUJ0X2EmeBuE4j2CVZYqm4PAy_nyd876ewhTM36-hvMFffdA5fUA9Q0kLLaKPPasWg8KXYHWKV6HnsgLLCBFlsMU7C0Fh91sL2PF9isX3cVmhEf9VmK7pvaj5mZ_Hg9V4CO996f3gaCgYKAbcSARISFQFWKvPlj2HfONnL874VVnTWL2sJ2w0163",
+        expires: 1484314697598,
       },
     });
 
