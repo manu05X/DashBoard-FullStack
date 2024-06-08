@@ -1468,6 +1468,56 @@ app.listen(7001, () => {
   console.log("Server Started");
 });
 
+app.get("/forgot-password", async (req, res) => {
+  //const { email } = req.body;
+  email = "louisklimek@gmail.com"
+
+  try {
+    const oldUser = await User.findOne({ email });
+    if (!oldUser) {
+      return res.json({ status: "User does not Exist!" });
+    }
+    console.log(oldUser);
+    const secret = JWT_SECRET + oldUser.password;
+    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
+      expiresIn: "5m",
+    });
+    console.log(token);
+    const link = `http://127.0.0.1:7001/reset-password/${oldUser._id}/${token}`;
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        type: "",
+        user: "",
+        clientId: "",
+        clientSecret: "",
+        refreshToken: "",
+        accessToken: "",
+        expires: ,
+      },
+    });
+    
+
+    var mailOptions = {
+      from: "SportsPlatform@gmail.com",
+      to: email,
+      subject: "Password Reset",
+      text: link,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+    console.log(link);
+  } catch (error) { }
+});
+
 app.get("/reset-password/:id/:token", async (req, res) => {
   const { id, token } = req.params;
   console.log(req.params);
